@@ -67,3 +67,33 @@ urlpatterns = [
 	path('',views.index, name='index'),
 ]
 ```
+# SQL_app
+
+## データベース準備
+
+- models.pyの作成
+
+- インストール
+```
+pip install mysql-connector-python
+```
+
+- databaseの設定
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'mysql.connector.django',　＃使用しているドライバ
+        'NAME': [データーベース],
+        'USER': [mySQLのuser]',
+        'PASSWORD': [mySQLのパスワード],
+		'HOST': 'localhost',
+        'PORT': [ローカルポスト番号],
+    }
+}
+```
+
+- マイグレーション
+```
+python manage.py makemigrations [アプリ名]
+python manage.py migrate 
+```
