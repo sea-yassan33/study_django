@@ -12,6 +12,32 @@
 </head>
 <body class="container">
 	<h1 class="display-4 text-primary">{{title}}</h1>
+	<hr>
+	<form action="{% url 'index' %}" method="post">
+	{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="send" class="btn btn-primary">
+	</form>
+	<hr>
+	<h1 class="display-4 text-primary">{{message}}</h1>
+	<table class="table">
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>MAIL</th>
+			<th>GENDER</th>
+			<th>SNS_ACOUNT</th>
+		</tr>
+	{% for item in data %}
+		<tr>
+			<td>{{item.id}}</td>
+			<td>{{item.name}}</td>
+			<td>{{item.mail}}</td>
+			<td>{{item.gender}}</td>
+			<td>{{item.sns_acount}}</td>
+		</tr>
+	{% endfor %}
+	</table>
 	
 	
 	<!-- jQuery読み込み -->

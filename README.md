@@ -97,3 +97,9 @@ DATABASES = {
 python manage.py makemigrations [アプリ名]
 python manage.py migrate 
 ```
+
+## 顧客の登録フォームの作成
+以下を修正
+- forms.py
+- views.py
+- index.html
